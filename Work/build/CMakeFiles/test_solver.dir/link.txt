@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_solver.dir/tests/test_solver.cpp.o CMakeFiles/test_solver.dir/src/brusselator.cpp.o CMakeFiles/test_solver.dir/src/integrator.cpp.o CMakeFiles/test_solver.dir/src/writer.cpp.o -o test_solver

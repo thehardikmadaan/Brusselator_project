@@ -13,36 +13,34 @@ Eigen::SparseMatrix<double> buildMatrixA(const GridInfo& grid) {
         for (int j = 0; j < grid.nx; ++j) {
             int k = i * grid.nx + j;
 
-            // Center point: -4 / (dx^2)
-            triplets.push_back(Eigen::Triplet<double>(k, k, -4.0 * factor));
+            int active_neighbors = 0;
 
             // West (j - 1)
             if (j > 0) {
                 triplets.push_back(Eigen::Triplet<double>(k, k - 1, factor));
-            } else {
-                triplets.push_back(Eigen::Triplet<double>(k, k + 1, factor)); // Neumann BC reflection
+                active_neighbors++;
             }
 
             // East (j + 1)
             if (j < grid.nx - 1) {
                 triplets.push_back(Eigen::Triplet<double>(k, k + 1, factor));
-            } else {
-                triplets.push_back(Eigen::Triplet<double>(k, k - 1, factor)); // Neumann BC reflection
+                active_neighbors++;
             }
 
             // South (i - 1)
             if (i > 0) {
                 triplets.push_back(Eigen::Triplet<double>(k, k - grid.nx, factor));
-            } else {
-                triplets.push_back(Eigen::Triplet<double>(k, k + grid.nx, factor)); // Neumann BC reflection
+                active_neighbors++;
             }
 
             // North (i + 1)
             if (i < grid.ny - 1) {
                 triplets.push_back(Eigen::Triplet<double>(k, k + grid.nx, factor));
-            } else {
-                triplets.push_back(Eigen::Triplet<double>(k, k - grid.nx, factor)); // Neumann BC reflection
+                active_neighbors++;
             }
+
+            // Center point: -active_neighbors / (dx^2)
+            triplets.push_back(Eigen::Triplet<double>(k, k, -static_cast<double>(active_neighbors) * factor));
         }
     }
 

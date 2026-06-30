@@ -1,0 +1,8 @@
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/brusselator.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/test_solver.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/edit_cache.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/rebuild_cache.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/list_install_components.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/install.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/install/local.dir
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/install/strip.dir
