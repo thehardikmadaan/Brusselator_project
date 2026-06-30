@@ -1,0 +1,40 @@
+Starting 2D Brusselator Simulation...
+Grid: 40x40
+Domain: 0.195m x 0.195m
+Method: Explicit RK4
+Reactions: Enabled
+Time step: dt = 0.01 s
+Applied initial perturbations.
+Assembling sparse matrices...
+Starting time integration...
+Time: 1.000 s | Step: 100
+Time: 2.000 s | Step: 200
+Time: 3.000 s | Step: 300
+Time: 4.000 s | Step: 400
+Time: 5.000 s | Step: 500
+Time: 6.000 s | Step: 600
+Time: 7.000 s | Step: 700
+Time: 8.000 s | Step: 800
+Time: 9.000 s | Step: 900
+Time: 10.000 s | Step: 1000
+Time: 11.000 s | Step: 1100
+Time: 12.000 s | Step: 1200
+Time: 13.000 s | Step: 1300
+Time: 14.000 s | Step: 1400
+Time: 15.000 s | Step: 1500
+Time: 16.000 s | Step: 1600
+Time: 17.000 s | Step: 1700
+Time: 18.000 s | Step: 1800
+Time: 19.000 s | Step: 1900
+Time: 20.000 s | Step: 2000
+Time: 21.000 s | Step: 2100
+Time: 22.000 s | Step: 2200
+Time: 23.000 s | Step: 2300
+Time: 24.000 s | Step: 2400
+Time: 25.000 s | Step: 2500
+Time: 26.000 s | Step: 2600
+Time: 27.000 s | Step: 2700
+Time: 28.000 s | Step: 2800
+Time: 29.000 s | Step: 2900
+Time: 30.000 s | Step: 3000
+Simulation completed successfully.

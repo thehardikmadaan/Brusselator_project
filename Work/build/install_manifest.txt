@@ -1,0 +1,2 @@
+/Users/hardikmadaan/Brusselator_project/Work/bin/brusselator
+/Users/hardikmadaan/Brusselator_project/Work/bin/test_solver
