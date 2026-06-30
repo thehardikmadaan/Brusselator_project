@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+
+# Build stage: compiles the code and stores the binaries
+build-job:
+  stage: build
+  image: ubuntu:22.04
+  before_script:
+    - apt-get update && apt-get install -y build-essential cmake libeigen3-dev
+  script:
+    - mkdir -p build && cd build
+    - cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=.. ..
+    - make -j$(nproc)
+    - make install
+  artifacts:
+    paths:
+      - bin/
+
+# Test stage: runs unit tests and automated variations
+test-job:
+  stage: test
+  image: ubuntu:22.04
+  before_script:
+    - apt-get update && apt-get install -y build-essential cmake libeigen3-dev
+  script:
+    # Run the automated unit test suite
+    - ./bin/test_solver
+    # Verify that the parameter variation script runs successfully
+    - chmod +x scripts/run_variation.sh
+    - ./scripts/run_variation.sh var2
+  dependencies:
+    - build-job
