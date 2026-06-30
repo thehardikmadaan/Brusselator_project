@@ -1,0 +1,28 @@
+Starting 2D Brusselator Simulation...
+Grid: 40x40
+Domain: 0.195m x 0.195m
+Method: Implicit Euler (Newton)
+Reactions: Enabled
+Time step: dt = 0.03 s
+Applied initial perturbations.
+Assembling sparse matrices...
+Starting time integration...
+Time: 0.300 s | Step: 10 | Newton Iterations: 2
+Time: 0.600 s | Step: 20 | Newton Iterations: 2
+Time: 0.900 s | Step: 30 | Newton Iterations: 2
+Time: 1.200 s | Step: 40 | Newton Iterations: 2
+Time: 1.500 s | Step: 50 | Newton Iterations: 2
+Time: 1.800 s | Step: 60 | Newton Iterations: 2
+Time: 2.100 s | Step: 70 | Newton Iterations: 2
+Time: 2.400 s | Step: 80 | Newton Iterations: 2
+Time: 2.700 s | Step: 90 | Newton Iterations: 2
+Time: 3.000 s | Step: 100 | Newton Iterations: 2
+Time: 3.300 s | Step: 110 | Newton Iterations: 2
+Time: 3.600 s | Step: 120 | Newton Iterations: 2
+Time: 3.900 s | Step: 130 | Newton Iterations: 2
+Time: 4.200 s | Step: 140 | Newton Iterations: 2
+Time: 4.500 s | Step: 150 | Newton Iterations: 2
+Time: 4.800 s | Step: 160 | Newton Iterations: 2
+Time: 5.000 s | Step: 167 | Newton Iterations: 1
+Simulation completed successfully.
+Total Newton Iterations: 333
