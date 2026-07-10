@@ -11,4 +11,4 @@
 #   8. method         - Time integration method (rk4 or implicit) (e.g., rk4)
 #   9. reactions      - Reaction toggle (on or off) (e.g., on)
 
-../../bin/brusselator 40 40 30.0 0.01 1.0 1.0 2.5 rk4 on
+../../../bin/brusselator 40 40 30.0 0.01 0.1 1.0 2.5 rk4 on
