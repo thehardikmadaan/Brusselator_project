@@ -25,8 +25,8 @@ run_var1() {
         METHOD="rk4"
         REACT="on"
         
-        # Create start_run.sh with mandatory explanatory comments
-        cat <<EOF > "${RUN_DIR}/start_run.sh"
+        # Create start_run.sh with mandatory explanatory comments in the root dir
+        cat <<EOF > "start_run.sh"
 #!/bin/bash
 # This script runs a single simulation of the 2D Brusselator reaction-diffusion system.
 # Positional Arguments:
@@ -40,18 +40,20 @@ run_var1() {
 #   8. method         - Time integration method (rk4 or implicit) (e.g., $METHOD)
 #   9. reactions      - Reaction toggle (on or off) (e.g., $REACT)
 
-../../bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT
+./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT
 EOF
-        chmod +x "${RUN_DIR}/start_run.sh"
+        chmod +x "start_run.sh"
         
         echo "  Running simulation for Cb = ${cb}..."
         # Clean output directory before running
         rm -rf output && mkdir -p output
         
-        # Run simulation and log output
-        ./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT > "${RUN_DIR}/simulation.log" 2>&1
+        # Run the start script
+        ./start_run.sh > "simulation.log" 2>&1
         
-        # Move generated VTK files to the run directory
+        # Move generated files to the run directory
+        mv start_run.sh "${RUN_DIR}/"
+        mv simulation.log "${RUN_DIR}/"
         mv output/*.vts "${RUN_DIR}/"
         rm -rf output
     done
@@ -80,8 +82,8 @@ run_var2() {
         METHOD="implicit"
         REACT="on"
         
-        # Create start_run.sh with mandatory explanatory comments
-        cat <<EOF > "${RUN_DIR}/start_run.sh"
+        # Create start_run.sh with mandatory explanatory comments in the root dir
+        cat <<EOF > "start_run.sh"
 #!/bin/bash
 # This script runs a single simulation of the 2D Brusselator reaction-diffusion system.
 # Positional Arguments:
@@ -95,18 +97,20 @@ run_var2() {
 #   8. method         - Time integration method (rk4 or implicit) (e.g., $METHOD)
 #   9. reactions      - Reaction toggle (on or off) (e.g., $REACT)
 
-../../bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT
+./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT
 EOF
-        chmod +x "${RUN_DIR}/start_run.sh"
+        chmod +x "start_run.sh"
         
         echo "  Running simulation for dt = ${dt}..."
         # Clean output directory before running
         rm -rf output && mkdir -p output
         
-        # Run simulation and log output
-        ./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT > "${RUN_DIR}/simulation.log" 2>&1
+        # Run the start script
+        ./start_run.sh > "simulation.log" 2>&1
         
-        # Move generated VTK files to the run directory
+        # Move generated files to the run directory
+        mv start_run.sh "${RUN_DIR}/"
+        mv simulation.log "${RUN_DIR}/"
         mv output/*.vts "${RUN_DIR}/"
         rm -rf output
     done
@@ -153,7 +157,7 @@ run_custom() {
         fi
         
         # Create start_run.sh
-        cat <<EOF > "${RUN_DIR}/start_run.sh"
+        cat <<EOF > "start_run.sh"
 #!/bin/bash
 # This script runs a single simulation of the 2D Brusselator reaction-diffusion system.
 # Positional Arguments:
@@ -167,13 +171,17 @@ run_custom() {
 #   8. method         - Time integration method (rk4 or implicit)
 #   9. reactions      - Reaction toggle (on or off)
 
-../../bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT
+./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT
 EOF
-        chmod +x "${RUN_DIR}/start_run.sh"
+        chmod +x "start_run.sh"
         
         echo "  Running simulation for ${PARAM} = ${val}..."
         rm -rf output && mkdir -p output
-        ./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT > "${RUN_DIR}/simulation.log" 2>&1
+        
+        ./start_run.sh > "simulation.log" 2>&1
+        
+        mv start_run.sh "${RUN_DIR}/"
+        mv simulation.log "${RUN_DIR}/"
         mv output/*.vts "${RUN_DIR}/"
         rm -rf output
     done
