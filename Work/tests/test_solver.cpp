@@ -137,6 +137,87 @@ void testSolverAgreement() {
     std::cout << "PASSED\n";
 }
 
+void testReferenceSolution() {
+    std::cout << "Running Test 4: Reference Solution Comparison... ";
+    
+    GridInfo grid;
+    grid.nx = 40;
+    grid.ny = 40;
+    grid.duration = 30.0;
+    grid.dt = 0.01;
+    grid.Ca = 1.0;
+    grid.Cb = 3.0;
+    grid.method = "explicit";
+    grid.reactions = true;
+    grid.D1 = 1e-5;
+    grid.D2 = 1e-6;
+    grid.dx = 0.005;
+    grid.dy = 0.005;
+    
+    int N = grid.nx * grid.ny;
+    Eigen::VectorXd C_init(2 * N);
+    C_init.head(N) = Eigen::VectorXd::Constant(N, grid.Ca);
+    C_init.tail(N) = Eigen::VectorXd::Constant(N, grid.Cb / grid.Ca);
+    
+    C_init[10 * grid.nx + 10] *= 1.2;
+    C_init[10 * grid.nx + 10 + N] *= 1.2;
+    C_init[30 * grid.nx + 30] *= 0.9;
+    C_init[30 * grid.nx + 30 + N] *= 0.9;
+    
+    Eigen::SparseMatrix<double> A = buildMatrixA(grid);
+    Eigen::SparseMatrix<double> Atilde = buildMatrixAtilde(grid, A);
+    
+    Eigen::VectorXd C = C_init;
+    double t = 0.0;
+    // Advance simulation using explicit Euler
+    while (t < grid.duration) {
+        double current_dt = grid.dt;
+        if (t + current_dt > grid.duration) {
+            current_dt = grid.duration - t;
+        }
+        
+        GridInfo current_grid = grid;
+        current_grid.dt = current_dt;
+        
+        stepExplicitEuler(current_grid, Atilde, C);
+        t += current_dt;
+    }
+    
+    auto reader = vtkSmartPointer<vtkXMLStructuredGridReader>::New();
+    // Path relative to Work directory
+    reader->SetFileName("../final_output_30s (1).vts");
+    reader->Update();
+    
+    vtkStructuredGrid* refGrid = reader->GetOutput();
+    if (!refGrid || refGrid->GetNumberOfPoints() == 0) {
+        std::cerr << "\nFAIL: Could not load reference file! (Checked path: ../final_output_30s (1).vts)\n";
+        std::exit(1);
+    }
+    
+    vtkFloatArray* c1_ref = vtkFloatArray::SafeDownCast(refGrid->GetPointData()->GetArray("C1"));
+    vtkFloatArray* c2_ref = vtkFloatArray::SafeDownCast(refGrid->GetPointData()->GetArray("C2"));
+    
+    if (!c1_ref || !c2_ref) {
+        std::cerr << "\nFAIL: Reference file missing C1 or C2 data arrays!\n";
+        std::exit(1);
+    }
+    
+    double max_diff = 0.0;
+    for (int i = 0; i < N; ++i) {
+        double diff1 = std::abs(C[i] - c1_ref->GetValue(i));
+        double diff2 = std::abs(C[i + N] - c2_ref->GetValue(i));
+        max_diff = std::max(max_diff, diff1);
+        max_diff = std::max(max_diff, diff2);
+    }
+    
+    if (max_diff > 1e-4) {
+        std::cerr << "\nFAIL: Solution differs from reference! Max difference: " << max_diff << "\n";
+        std::exit(1);
+    }
+    
+    std::cout << "PASSED\n";
+}
+
 int main() {
     std::cout << "==================================================\n";
     std::cout << "Running Brusselator Solver Unit Tests...\n";
