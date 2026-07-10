@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
     cmake \
     libeigen3-dev \
     libvtk9-dev \
+    qtbase5-dev \
+    libopenmpi-dev \
+    libgl1-mesa-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory inside the container

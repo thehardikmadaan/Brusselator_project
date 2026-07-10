@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(BrusselatorSolver CXX)
+project(BrusselatorSolver CXX C)
 
 # Require C++17 standard
 set(CMAKE_CXX_STANDARD 17)
