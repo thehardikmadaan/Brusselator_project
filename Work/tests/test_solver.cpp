@@ -6,6 +6,11 @@
 #include <cassert>
 #include <Eigen/Core>
 #include <Eigen/Sparse>
+#include <vtkSmartPointer.h>
+#include <vtkXMLStructuredGridReader.h>
+#include <vtkStructuredGrid.h>
+#include <vtkPointData.h>
+#include <vtkFloatArray.h>
 
 // Test 1: Verify that the row sums of the Laplacian matrix A are exactly 0 (Neumann BCs)
 void testMatrixCorrectness() {
@@ -140,6 +145,7 @@ int main() {
     testMatrixCorrectness();
     testMassConservation();
     testSolverAgreement();
+    testReferenceSolution();
     
     std::cout << "==================================================\n";
     std::cout << "All unit tests completed successfully!\n";

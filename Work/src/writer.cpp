@@ -1,39 +1,47 @@
 #include "writer.hpp"
-#include <fstream>
 #include <iostream>
+#include <vtkSmartPointer.h>
+#include <vtkStructuredGrid.h>
+#include <vtkXMLStructuredGridWriter.h>
+#include <vtkFloatArray.h>
+#include <vtkPointData.h>
+#include <vtkPoints.h>
 
 void writeVTK(const std::string& filename, const GridInfo& grid, const Eigen::VectorXd& C) {
-    std::ofstream file(filename);
-    if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << filename << " for writing!\n";
-        return;
-    }
-
     int N = grid.nx * grid.ny;
 
-    // Write legacy VTK header
-    file << "# vtk DataFile Version 3.0\n";
-    file << "Brusselator Concentration Output\n";
-    file << "ASCII\n";
-    file << "DATASET STRUCTURED_POINTS\n";
-    file << "DIMENSIONS " << grid.nx << " " << grid.ny << " 1\n";
-    file << "ORIGIN 0.0 0.0 0.0\n";
-    file << "SPACING " << grid.dx << " " << grid.dy << " 1.0\n";
-    file << "POINT_DATA " << N << "\n";
-
-    // Write scalar field for Species 1 (C1 - activator)
-    file << "SCALARS C1 double 1\n";
-    file << "LOOKUP_TABLE default\n";
-    for (int i = 0; i < N; ++i) {
-        file << C[i] << "\n";
+    vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+    for (int j = 0; j < grid.ny; ++j) {
+        for (int i = 0; i < grid.nx; ++i) {
+            points->InsertNextPoint(i * grid.dx, j * grid.dy, 0.0);
+        }
     }
 
-    // Write scalar field for Species 2 (C2 - inhibitor)
-    file << "SCALARS C2 double 1\n";
-    file << "LOOKUP_TABLE default\n";
+    vtkSmartPointer<vtkStructuredGrid> structuredGrid = vtkSmartPointer<vtkStructuredGrid>::New();
+    structuredGrid->SetDimensions(grid.nx, grid.ny, 1);
+    structuredGrid->SetPoints(points);
+
+    vtkSmartPointer<vtkFloatArray> c1Array = vtkSmartPointer<vtkFloatArray>::New();
+    c1Array->SetName("C1");
+    c1Array->SetNumberOfComponents(1);
+    c1Array->SetNumberOfTuples(N);
+
+    vtkSmartPointer<vtkFloatArray> c2Array = vtkSmartPointer<vtkFloatArray>::New();
+    c2Array->SetName("C2");
+    c2Array->SetNumberOfComponents(1);
+    c2Array->SetNumberOfTuples(N);
+
     for (int i = 0; i < N; ++i) {
-        file << C[i + N] << "\n";
+        c1Array->SetValue(i, C[i]);
+        c2Array->SetValue(i, C[i + N]);
     }
 
-    file.close();
+    structuredGrid->GetPointData()->AddArray(c1Array);
+    structuredGrid->GetPointData()->AddArray(c2Array);
+
+    vtkSmartPointer<vtkXMLStructuredGridWriter> writer = vtkSmartPointer<vtkXMLStructuredGridWriter>::New();
+    writer->SetFileName(filename.c_str());
+    writer->SetInputData(structuredGrid);
+    writer->SetCompressorTypeToZLib();
+    writer->Write();
 }

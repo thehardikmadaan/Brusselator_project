@@ -8,6 +8,9 @@
 // Perform a single explicit RK4 time step to advance C in place
 void stepRK4(const GridInfo& grid, const Eigen::SparseMatrix<double>& Atilde, Eigen::VectorXd& C);
 
+// Perform a single explicit Euler time step to advance C in place
+void stepExplicitEuler(const GridInfo& grid, const Eigen::SparseMatrix<double>& Atilde, Eigen::VectorXd& C);
+
 // Perform a single implicit Euler time step using Newton's method
 void stepImplicitEuler(const GridInfo& grid, const Eigen::SparseMatrix<double>& Atilde, Eigen::VectorXd& C, int& total_newton_its);
 

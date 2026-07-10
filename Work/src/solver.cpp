@@ -20,12 +20,12 @@ int main(int argc, char *argv[]) {
         is_six_positional = true;
     } else if (argc == 8) {
         std::string arg7 = argv[7];
-        if (arg7 == "rk4" || arg7 == "implicit") {
+        if (arg7 == "rk4" || arg7 == "implicit" || arg7 == "explicit") {
             is_six_positional = true;
         }
     } else if (argc == 9) {
         std::string arg7 = argv[7];
-        if (arg7 == "rk4" || arg7 == "implicit") {
+        if (arg7 == "rk4" || arg7 == "implicit" || arg7 == "explicit") {
             is_six_positional = true;
         }
     } else if (argc < 7 || argc > 10) {
@@ -81,7 +81,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Starting 2D Brusselator Simulation...\n";
     std::cout << "Grid: " << grid.nx << "x" << grid.ny << "\n";
     std::cout << "Domain: " << (grid.nx - 1) * grid.dx << "m x " << (grid.ny - 1) * grid.dy << "m\n";
-    std::cout << "Method: " << (grid.method == "implicit" ? "Implicit Euler (Newton)" : "Explicit RK4") << "\n";
+    std::cout << "Method: " << (grid.method == "implicit" ? "Implicit Euler (Newton)" : (grid.method == "explicit" ? "Explicit Euler" : "Explicit RK4")) << "\n";
     std::cout << "Reactions: " << (grid.reactions ? "Enabled" : "Disabled") << "\n";
     std::cout << "Time step: dt = " << grid.dt << " s\n";
 
@@ -121,7 +121,7 @@ int main(int argc, char *argv[]) {
     #endif
 
     // Write initial state
-    std::string init_filename = "output/output_0000.vtk";
+    std::string init_filename = "output/output_0000.vts";
     writeVTK(init_filename, grid, C);
 
     double t = 0.0;
@@ -154,6 +154,15 @@ int main(int argc, char *argv[]) {
                           << " | Step: " << step 
                           << " | Newton Iterations: " << step_its << "\n";
             }
+        } else if (grid.method == "explicit") {
+            stepExplicitEuler(current_grid, Atilde, C);
+            t += current_dt;
+            step++;
+
+            if (step % 100 == 0 || t >= grid.duration) {
+                std::cout << "Time: " << std::fixed << std::setprecision(3) << t << " s"
+                          << " | Step: " << step << "\n";
+            }
         } else {
             stepRK4(current_grid, Atilde, C);
             t += current_dt;
@@ -168,7 +177,7 @@ int main(int argc, char *argv[]) {
         // Write output if interval reached
         if (t - last_write_time >= grid.write_interval - 1e-9 || t >= grid.duration) {
             std::stringstream ss;
-            ss << "output/output_" << std::setfill('0') << std::setw(4) << file_counter << ".vtk";
+            ss << "output/output_" << std::setfill('0') << std::setw(4) << file_counter << ".vts";
             writeVTK(ss.str(), grid, C);
             last_write_time = t;
             file_counter++;

@@ -14,6 +14,10 @@ void stepRK4(const GridInfo& grid, const Eigen::SparseMatrix<double>& Atilde, Ei
     C += (dt / 6.0) * (k1 + 2.0 * k2 + 2.0 * k3 + k4);
 }
 
+void stepExplicitEuler(const GridInfo& grid, const Eigen::SparseMatrix<double>& Atilde, Eigen::VectorXd& C) {
+    C += grid.dt * computeRHS(grid, Atilde, C);
+}
+
 void stepImplicitEuler(const GridInfo& grid, const Eigen::SparseMatrix<double>& Atilde, Eigen::VectorXd& C, int& total_newton_its) {
     double tol = 1e-6;
     int max_its = 50;

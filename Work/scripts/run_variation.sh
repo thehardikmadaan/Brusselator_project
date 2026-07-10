@@ -52,7 +52,7 @@ EOF
         ./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT > "${RUN_DIR}/simulation.log" 2>&1
         
         # Move generated VTK files to the run directory
-        mv output/*.vtk "${RUN_DIR}/"
+        mv output/*.vts "${RUN_DIR}/"
         rm -rf output
     done
     echo "Parameter Variation 1 completed. Results saved in results/var1/"
@@ -107,7 +107,7 @@ EOF
         ./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT > "${RUN_DIR}/simulation.log" 2>&1
         
         # Move generated VTK files to the run directory
-        mv output/*.vtk "${RUN_DIR}/"
+        mv output/*.vts "${RUN_DIR}/"
         rm -rf output
     done
     echo "Parameter Variation 2 completed. Results saved in results/var2/"
@@ -174,7 +174,7 @@ EOF
         echo "  Running simulation for ${PARAM} = ${val}..."
         rm -rf output && mkdir -p output
         ./bin/brusselator $NX $NY $DUR $DT $W_INT $CA $CB $METHOD $REACT > "${RUN_DIR}/simulation.log" 2>&1
-        mv output/*.vtk "${RUN_DIR}/"
+        mv output/*.vts "${RUN_DIR}/"
         rm -rf output
     done
     echo "Custom Parameter Variation completed. Results saved in results/${VAR_NAME}/"
