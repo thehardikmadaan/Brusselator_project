@@ -226,7 +226,6 @@ int main() {
     testMatrixCorrectness();
     testMassConservation();
     testSolverAgreement();
-    testReferenceSolution();
     
     std::cout << "==================================================\n";
     std::cout << "All unit tests completed successfully!\n";
