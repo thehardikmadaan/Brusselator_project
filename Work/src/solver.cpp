@@ -10,9 +10,11 @@
 #include <Eigen/Core>
 
 int main(int argc, char *argv[]) {
-    // Determine which CLI format is being used
-    // 6-positional format: nx ny duration write_interval Ca Cb [method] [reactions] (uses default dt=0.01)
-    // 7-positional format: nx ny duration dt write_interval Ca Cb [method] [reactions]
+    // Determine which CLI format is being used           \\
+    // 6-positional format: nx ny duration write_interval \\
+    // Ca Cb [method] [reactions] (uses default dt=0.01)  \\
+    // 7-positional format: nx ny duration dt             \\
+    // write_interval Ca Cb [method] [reactions]          \\
     
     bool is_six_positional = false;
     
@@ -72,7 +74,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // Set other grid parameters
+    // Set other grid parameters                          \\
     grid.dx = 0.005;
     grid.dy = 0.005;
     grid.D1 = 1e-5;
@@ -85,12 +87,12 @@ int main(int argc, char *argv[]) {
     std::cout << "Reactions: " << (grid.reactions ? "Enabled" : "Disabled") << "\n";
     std::cout << "Time step: dt = " << grid.dt << " s\n";
 
-    // Initialize state
+    // Initialize state                                   \\
     int num_points = grid.nx * grid.ny;
     Eigen::VectorXd C1 = Eigen::VectorXd::Constant(num_points, grid.Ca);
     Eigen::VectorXd C2 = Eigen::VectorXd::Constant(num_points, grid.Cb / grid.Ca);
 
-    // Apply perturbations
+    // Apply perturbations                                \\
     if (grid.nx > 30 && grid.ny > 30) {
         int p1_idx = 10 * grid.nx + 10;
         int p2_idx = 30 * grid.nx + 30;
@@ -103,24 +105,24 @@ int main(int argc, char *argv[]) {
         std::cout << "Applied initial perturbations.\n";
     }
 
-    // Combine into monolithic state vector C
+    // Combine into monolithic state vector C             \\
     Eigen::VectorXd C(2 * num_points);
     C.head(num_points) = C1;
     C.tail(num_points) = C2;
 
-    // Build discretization matrices
+    // Build discretization matrices                      \\
     std::cout << "Assembling sparse matrices...\n";
     Eigen::SparseMatrix<double> A = buildMatrixA(grid);
     Eigen::SparseMatrix<double> Atilde = buildMatrixAtilde(grid, A);
 
-    // Create output directory
+    // Create output directory                            \\
     #ifdef _WIN32
         system("mkdir output > nul 2>&1");
     #else
         system("mkdir -p output");
     #endif
 
-    // Write initial state
+    // Write initial state                                \\
     std::string init_filename = "output/output_0000.vts";
     writeVTK(init_filename, grid, C);
 
@@ -137,7 +139,8 @@ int main(int argc, char *argv[]) {
             current_dt = grid.duration - t;
         }
 
-        // We temporarily update grid.dt to match the actual step size taken
+        // We temporarily update grid.dt to match the     \\
+        // actual step size taken                         \\
         GridInfo current_grid = grid;
         current_grid.dt = current_dt;
 
@@ -174,7 +177,7 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        // Write output if interval reached
+        // Write output if interval reached               \\
         if (t - last_write_time >= grid.write_interval - 1e-9 || t >= grid.duration) {
             std::stringstream ss;
             ss << "output/output_" << std::setfill('0') << std::setw(4) << file_counter << ".vts";

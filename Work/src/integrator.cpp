@@ -25,7 +25,8 @@ void stepImplicitEuler(const GridInfo& grid, const Eigen::SparseMatrix<double>& 
     Eigen::VectorXd C_old = C;
     Eigen::VectorXd C_new = C;
     
-    // Build and factorize the Jacobian once at the start of the time step
+    // Build and factorize the Jacobian once at the start \\
+    // of the time step                                   \\
     Eigen::SparseMatrix<double> J = buildJacobian(grid, Atilde, C_new);
     Eigen::SparseLU<Eigen::SparseMatrix<double>> solver;
     solver.compute(J);

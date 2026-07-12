@@ -3,7 +3,7 @@
 
 #include <Eigen/Sparse>
 
-// Struct to store all simulation and physical parameters
+// Struct to store all simulation and physical parameters \\
 struct SimParams {
     int nx;                 // Number of grid points in x-direction
     int ny;                 // Number of grid points in y-direction
@@ -18,7 +18,7 @@ struct SimParams {
     double D2;              // Diffusion coefficient for species 2 [m^2/s]
 };
 
-// Function declarations
+// Function declarations                                  \\
 Eigen::SparseMatrix<double> buildMatrixA(const SimParams& params);
 Eigen::SparseMatrix<double> buildMatrixAtilde(const SimParams& params, const Eigen::SparseMatrix<double>& A);
 Eigen::VectorXd computeRHS(const SimParams& params, const Eigen::SparseMatrix<double>& Atilde, const Eigen::VectorXd& C);
