@@ -8,9 +8,17 @@ Applied initial perturbations.
 Assembling sparse matrices...
 Starting time integration...
 Time: 3.000 s | Step: 100
-Time: 5.000 s | Step: 167
+Time: 6.000 s | Step: 200
+Time: 9.000 s | Step: 300
+Time: 12.000 s | Step: 400
+Time: 15.000 s | Step: 500
+Time: 18.000 s | Step: 600
+Time: 21.000 s | Step: 700
+Time: 24.000 s | Step: 800
+Time: 27.000 s | Step: 900
+Time: 30.000 s | Step: 1000
 Simulation completed successfully.
 
-real	0m0.121s
-user	0m0.120s
-sys	0m0.030s
+real	0m2.150s
+user	0m1.807s
+sys	0m0.101s

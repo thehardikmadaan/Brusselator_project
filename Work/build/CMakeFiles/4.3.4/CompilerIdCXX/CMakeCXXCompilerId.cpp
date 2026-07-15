@@ -756,24 +756,40 @@ char const *info_cray = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";
 
 /* Convert integer to decimal digit literals.  */
 #define DEC(n)                   \
+
   ('0' + (((n) / 10000000)%10)), \
+
   ('0' + (((n) / 1000000)%10)),  \
+
   ('0' + (((n) / 100000)%10)),   \
+
   ('0' + (((n) / 10000)%10)),    \
+
   ('0' + (((n) / 1000)%10)),     \
+
   ('0' + (((n) / 100)%10)),      \
+
   ('0' + (((n) / 10)%10)),       \
+
   ('0' +  ((n) % 10))
 
 /* Convert integer to hex digit literals.  */
 #define HEX(n)             \
+
   ('0' + ((n)>>28 & 0xF)), \
+
   ('0' + ((n)>>24 & 0xF)), \
+
   ('0' + ((n)>>20 & 0xF)), \
+
   ('0' + ((n)>>16 & 0xF)), \
+
   ('0' + ((n)>>12 & 0xF)), \
+
   ('0' + ((n)>>8  & 0xF)), \
+
   ('0' + ((n)>>4  & 0xF)), \
+
   ('0' + ((n)     & 0xF))
 
 /* Construct a string literal encoding the version number. */
@@ -911,7 +927,9 @@ const char* info_language_standard_default = "INFO" ":" "standard_default["
 
 const char* info_language_extensions_default = "INFO" ":" "extensions_default["
 #if (defined(__clang__) || defined(__GNUC__) || defined(__xlC__) ||           \
+
      defined(__TI_COMPILER_VERSION__) || defined(__RENESAS__)) &&             \
+
   !defined(__STRICT_ANSI__)
   "ON"
 #else

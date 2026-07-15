@@ -150,7 +150,7 @@ CMAKE_INSTALL_NAME_TOOL:FILEPATH=/usr/bin/install_name_tool
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/usr/local
+CMAKE_INSTALL_PREFIX:PATH=/Users/hardikmadaan/Brusselator_project/Work
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -2004,7 +2004,7 @@ ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
 ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/Users/hardikmadaan/Brusselator_project/Work
 //Compiler reason failure
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
 _Python3_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=d9d708fb73e9387450d34662b8992b91
@@ -2018,6 +2018,8 @@ _Python3_INCLUDE_DIR:INTERNAL=/opt/homebrew/opt/python@3.14/Frameworks/Python.fr
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;14;6;64;<none>;cpython-314-darwin;abi3;/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/lib/python3.14;/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/lib/python3.14;/opt/homebrew/lib/python3.14/site-packages;/opt/homebrew/lib/python3.14/site-packages
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=ff51e67373f329cbcbee6a4ac96f4784
+//Interpreter reason failure
+_Python3_Interpreter_REASON_FAILURE:INTERNAL=
 //Path to a library.
 _Python3_LIBRARY_RELEASE:INTERNAL=/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/lib/libpython3.14.dylib
 //NumPy reason failure

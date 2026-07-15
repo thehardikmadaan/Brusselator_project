@@ -14,6 +14,7 @@
 
 // Test 1: Verify that the row sums of the Laplacian      \\
 // matrix A are exactly 0 (Neumann BCs)                   \\
+
 void testMatrixCorrectness() {
     std::cout << "Running Test 1: Matrix Correctness (Row Sums)... ";
     
@@ -34,6 +35,7 @@ void testMatrixCorrectness() {
             }
         }
         // Row sum should be 0 up to machine precision    \\
+
         if (std::abs(row_sum) > 1e-11) {
             std::cerr << "\nFAIL: Row " << i << " sum is " << row_sum << " (expected 0.0)\n";
             std::exit(1);
@@ -45,6 +47,7 @@ void testMatrixCorrectness() {
 
 // Test 2: Verify mass conservation when reactions are    \\
 // disabled                                               \\
+
 void testMassConservation() {
     std::cout << "Running Test 2: Mass Conservation (Reactions Off)... ";
     
@@ -61,6 +64,7 @@ void testMassConservation() {
     
     // Add some random perturbations to make it           \\
     // interesting                                        \\
+
     C1[5 * grid.nx + 5] = 1.5;
     C2[15 * grid.nx + 15] = 2.5;
     
@@ -75,6 +79,7 @@ void testMassConservation() {
     Eigen::SparseMatrix<double> Atilde = buildMatrixAtilde(grid, A);
     
     // Run 10 steps of RK4                                \\
+
     double t = 0.0;
     while (t < grid.duration) {
         stepRK4(grid, Atilde, C);
@@ -86,6 +91,7 @@ void testMassConservation() {
     
     // Mass should be conserved exactly (up to tiny       \\
     // rounding errors)                                   \\
+
     if (std::abs(final_mass1 - initial_mass1) > 1e-10 || std::abs(final_mass2 - initial_mass2) > 1e-10) {
         std::cerr << "\nFAIL: Mass not conserved!\n"
                   << "  C1 Initial: " << initial_mass1 << " | Final: " << final_mass1 << "\n"
@@ -98,6 +104,7 @@ void testMassConservation() {
 
 // Test 3: Verify that RK4 and Implicit Euler agree for a \\
 // small time step                                        \\
+
 void testSolverAgreement() {
     std::cout << "Running Test 3: Solver Agreement (RK4 vs Implicit Euler)... ";
     
@@ -115,6 +122,7 @@ void testSolverAgreement() {
     C_init.tail(N) = Eigen::VectorXd::Constant(N, grid.Cb / grid.Ca);
     
     // Add perturbations                                  \\
+
     C_init[3 * grid.nx + 3] *= 1.2;
     C_init[12 * grid.nx + 12] *= 0.9;
     
@@ -122,19 +130,23 @@ void testSolverAgreement() {
     Eigen::SparseMatrix<double> Atilde = buildMatrixAtilde(grid, A);
     
     // 1. Take one step of RK4                            \\
+
     Eigen::VectorXd C_rk4 = C_init;
     stepRK4(grid, Atilde, C_rk4);
     
     // 2. Take one step of Implicit Euler                 \\
+
     Eigen::VectorXd C_implicit = C_init;
     int newton_its = 0;
     stepImplicitEuler(grid, Atilde, C_implicit, newton_its);
     
     // Check difference between solutions                 \\
+
     double diff = (C_rk4 - C_implicit).lpNorm<Eigen::Infinity>();
     
     // For dt = 0.001, RK4 (O(dt^4)) and Implicit Euler   \\
     // (O(dt)) should be extremely close                  \\
+
     if (diff > 1e-5) {
         std::cerr << "\nFAIL: Solvers disagree! Max difference: " << diff << " (expected < 1e-5)\n";
         std::exit(1);
@@ -176,6 +188,7 @@ void testReferenceSolution() {
     Eigen::VectorXd C = C_init;
     double t = 0.0;
     // Advance simulation using explicit Euler            \\
+
     while (t < grid.duration) {
         double current_dt = grid.dt;
         if (t + current_dt > grid.duration) {
@@ -191,6 +204,7 @@ void testReferenceSolution() {
     
     auto reader = vtkSmartPointer<vtkXMLStructuredGridReader>::New();
     // Path relative to Work directory                    \\
+
     reader->SetFileName("../final_output_30s (1).vts");
     reader->Update();
     

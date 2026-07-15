@@ -75,6 +75,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Set other grid parameters                          \\
+
     grid.dx = 0.005;
     grid.dy = 0.005;
     grid.D1 = 1e-5;
@@ -88,11 +89,13 @@ int main(int argc, char *argv[]) {
     std::cout << "Time step: dt = " << grid.dt << " s\n";
 
     // Initialize state                                   \\
+
     int num_points = grid.nx * grid.ny;
     Eigen::VectorXd C1 = Eigen::VectorXd::Constant(num_points, grid.Ca);
     Eigen::VectorXd C2 = Eigen::VectorXd::Constant(num_points, grid.Cb / grid.Ca);
 
     // Apply perturbations                                \\
+
     if (grid.nx > 30 && grid.ny > 30) {
         int p1_idx = 10 * grid.nx + 10;
         int p2_idx = 30 * grid.nx + 30;
@@ -106,16 +109,19 @@ int main(int argc, char *argv[]) {
     }
 
     // Combine into monolithic state vector C             \\
+
     Eigen::VectorXd C(2 * num_points);
     C.head(num_points) = C1;
     C.tail(num_points) = C2;
 
     // Build discretization matrices                      \\
+
     std::cout << "Assembling sparse matrices...\n";
     Eigen::SparseMatrix<double> A = buildMatrixA(grid);
     Eigen::SparseMatrix<double> Atilde = buildMatrixAtilde(grid, A);
 
     // Create output directory                            \\
+
     #ifdef _WIN32
         system("mkdir output > nul 2>&1");
     #else
@@ -123,6 +129,7 @@ int main(int argc, char *argv[]) {
     #endif
 
     // Write initial state                                \\
+
     std::string init_filename = "output/output_0000.vts";
     writeVTK(init_filename, grid, C);
 
@@ -141,6 +148,7 @@ int main(int argc, char *argv[]) {
 
         // We temporarily update grid.dt to match the     \\
         // actual step size taken                         \\
+
         GridInfo current_grid = grid;
         current_grid.dt = current_dt;
 
@@ -178,6 +186,7 @@ int main(int argc, char *argv[]) {
         }
 
         // Write output if interval reached               \\
+
         if (t - last_write_time >= grid.write_interval - 1e-9 || t >= grid.duration) {
             std::stringstream ss;
             ss << "output/output_" << std::setfill('0') << std::setw(4) << file_counter << ".vts";
