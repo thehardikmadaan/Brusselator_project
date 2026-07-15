@@ -1,3 +1,4 @@
+/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/brusselator_lib.dir
 /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/brusselator.dir
 /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/test_solver.dir
 /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles/edit_cache.dir

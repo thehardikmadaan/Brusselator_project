@@ -8,9 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/hardikmadaan/Brusselator_project/Work/src/brusselator.cpp" "CMakeFiles/test_solver.dir/src/brusselator.cpp.o" "gcc" "CMakeFiles/test_solver.dir/src/brusselator.cpp.o.d"
-  "/Users/hardikmadaan/Brusselator_project/Work/src/integrator.cpp" "CMakeFiles/test_solver.dir/src/integrator.cpp.o" "gcc" "CMakeFiles/test_solver.dir/src/integrator.cpp.o.d"
-  "/Users/hardikmadaan/Brusselator_project/Work/src/writer.cpp" "CMakeFiles/test_solver.dir/src/writer.cpp.o" "gcc" "CMakeFiles/test_solver.dir/src/writer.cpp.o.d"
   "/Users/hardikmadaan/Brusselator_project/Work/tests/test_solver.cpp" "CMakeFiles/test_solver.dir/tests/test_solver.cpp.o" "gcc" "CMakeFiles/test_solver.dir/tests/test_solver.cpp.o.d"
   )
 

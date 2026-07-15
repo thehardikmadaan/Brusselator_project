@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbrusselator_lib.a CMakeFiles/brusselator_lib.dir/src/brusselator.cpp.o CMakeFiles/brusselator_lib.dir/src/integrator.cpp.o CMakeFiles/brusselator_lib.dir/src/writer.cpp.o
+/usr/bin/ranlib libbrusselator_lib.a

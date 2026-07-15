@@ -1,0 +1,6 @@
+set(__QT_DEPLOY_TARGET_brusselator_lib_FILE /Users/hardikmadaan/Brusselator_project/Work/build/libbrusselator_lib.a)
+set(__QT_DEPLOY_TARGET_brusselator_lib_TYPE STATIC_LIBRARY)
+set(__QT_DEPLOY_TARGET_brusselator_FILE /Users/hardikmadaan/Brusselator_project/Work/build/brusselator)
+set(__QT_DEPLOY_TARGET_brusselator_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_test_solver_FILE /Users/hardikmadaan/Brusselator_project/Work/build/test_solver)
+set(__QT_DEPLOY_TARGET_test_solver_TYPE EXECUTABLE)

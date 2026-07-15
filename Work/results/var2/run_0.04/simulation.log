@@ -22,3 +22,7 @@ Time: 4.800 s | Step: 120 | Newton Iterations: 2
 Time: 5.000 s | Step: 125 | Newton Iterations: 2
 Simulation completed successfully.
 Total Newton Iterations: 258
+
+real	0m0.867s
+user	0m0.838s
+sys	0m0.066s

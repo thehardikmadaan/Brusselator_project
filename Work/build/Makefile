@@ -162,6 +162,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named brusselator_lib
+
+# Build rule for target.
+brusselator_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 brusselator_lib
+.PHONY : brusselator_lib
+
+# fast build rule for target.
+brusselator_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/build
+.PHONY : brusselator_lib/fast
+
+#=============================================================================
 # Target rules for targets named brusselator
 
 # Build rule for target.
@@ -192,8 +205,7 @@ src/brusselator.o: src/brusselator.cpp.o
 
 # target to build an object file
 src/brusselator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/brusselator.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/brusselator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/brusselator.cpp.o
 .PHONY : src/brusselator.cpp.o
 
 src/brusselator.i: src/brusselator.cpp.i
@@ -201,8 +213,7 @@ src/brusselator.i: src/brusselator.cpp.i
 
 # target to preprocess a source file
 src/brusselator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/brusselator.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/brusselator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/brusselator.cpp.i
 .PHONY : src/brusselator.cpp.i
 
 src/brusselator.s: src/brusselator.cpp.s
@@ -210,8 +221,7 @@ src/brusselator.s: src/brusselator.cpp.s
 
 # target to generate assembly for a file
 src/brusselator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/brusselator.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/brusselator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/brusselator.cpp.s
 .PHONY : src/brusselator.cpp.s
 
 src/integrator.o: src/integrator.cpp.o
@@ -219,8 +229,7 @@ src/integrator.o: src/integrator.cpp.o
 
 # target to build an object file
 src/integrator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/integrator.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/integrator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/integrator.cpp.o
 .PHONY : src/integrator.cpp.o
 
 src/integrator.i: src/integrator.cpp.i
@@ -228,8 +237,7 @@ src/integrator.i: src/integrator.cpp.i
 
 # target to preprocess a source file
 src/integrator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/integrator.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/integrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/integrator.cpp.i
 .PHONY : src/integrator.cpp.i
 
 src/integrator.s: src/integrator.cpp.s
@@ -237,8 +245,7 @@ src/integrator.s: src/integrator.cpp.s
 
 # target to generate assembly for a file
 src/integrator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/integrator.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/integrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/integrator.cpp.s
 .PHONY : src/integrator.cpp.s
 
 src/solver.o: src/solver.cpp.o
@@ -270,8 +277,7 @@ src/writer.o: src/writer.cpp.o
 
 # target to build an object file
 src/writer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/writer.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/writer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/writer.cpp.o
 .PHONY : src/writer.cpp.o
 
 src/writer.i: src/writer.cpp.i
@@ -279,8 +285,7 @@ src/writer.i: src/writer.cpp.i
 
 # target to preprocess a source file
 src/writer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/writer.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/writer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/writer.cpp.i
 .PHONY : src/writer.cpp.i
 
 src/writer.s: src/writer.cpp.s
@@ -288,8 +293,7 @@ src/writer.s: src/writer.cpp.s
 
 # target to generate assembly for a file
 src/writer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/src/writer.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/src/writer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/src/writer.cpp.s
 .PHONY : src/writer.cpp.s
 
 tests/test_solver.o: tests/test_solver.cpp.o
@@ -329,6 +333,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... brusselator"
+	@echo "... brusselator_lib"
 	@echo "... test_solver"
 	@echo "... src/brusselator.o"
 	@echo "... src/brusselator.i"

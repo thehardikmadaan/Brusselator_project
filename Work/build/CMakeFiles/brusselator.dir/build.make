@@ -86,65 +86,202 @@ CMakeFiles/brusselator.dir/src/solver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/brusselator.dir/src/solver.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hardikmadaan/Brusselator_project/Work/src/solver.cpp -o CMakeFiles/brusselator.dir/src/solver.cpp.s
 
-CMakeFiles/brusselator.dir/src/brusselator.cpp.o: CMakeFiles/brusselator.dir/flags.make
-CMakeFiles/brusselator.dir/src/brusselator.cpp.o: /Users/hardikmadaan/Brusselator_project/Work/src/brusselator.cpp
-CMakeFiles/brusselator.dir/src/brusselator.cpp.o: CMakeFiles/brusselator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/brusselator.dir/src/brusselator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/brusselator.dir/src/brusselator.cpp.o -MF CMakeFiles/brusselator.dir/src/brusselator.cpp.o.d -o CMakeFiles/brusselator.dir/src/brusselator.cpp.o -c /Users/hardikmadaan/Brusselator_project/Work/src/brusselator.cpp
-
-CMakeFiles/brusselator.dir/src/brusselator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/brusselator.dir/src/brusselator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hardikmadaan/Brusselator_project/Work/src/brusselator.cpp > CMakeFiles/brusselator.dir/src/brusselator.cpp.i
-
-CMakeFiles/brusselator.dir/src/brusselator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/brusselator.dir/src/brusselator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hardikmadaan/Brusselator_project/Work/src/brusselator.cpp -o CMakeFiles/brusselator.dir/src/brusselator.cpp.s
-
-CMakeFiles/brusselator.dir/src/integrator.cpp.o: CMakeFiles/brusselator.dir/flags.make
-CMakeFiles/brusselator.dir/src/integrator.cpp.o: /Users/hardikmadaan/Brusselator_project/Work/src/integrator.cpp
-CMakeFiles/brusselator.dir/src/integrator.cpp.o: CMakeFiles/brusselator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/brusselator.dir/src/integrator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/brusselator.dir/src/integrator.cpp.o -MF CMakeFiles/brusselator.dir/src/integrator.cpp.o.d -o CMakeFiles/brusselator.dir/src/integrator.cpp.o -c /Users/hardikmadaan/Brusselator_project/Work/src/integrator.cpp
-
-CMakeFiles/brusselator.dir/src/integrator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/brusselator.dir/src/integrator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hardikmadaan/Brusselator_project/Work/src/integrator.cpp > CMakeFiles/brusselator.dir/src/integrator.cpp.i
-
-CMakeFiles/brusselator.dir/src/integrator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/brusselator.dir/src/integrator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hardikmadaan/Brusselator_project/Work/src/integrator.cpp -o CMakeFiles/brusselator.dir/src/integrator.cpp.s
-
-CMakeFiles/brusselator.dir/src/writer.cpp.o: CMakeFiles/brusselator.dir/flags.make
-CMakeFiles/brusselator.dir/src/writer.cpp.o: /Users/hardikmadaan/Brusselator_project/Work/src/writer.cpp
-CMakeFiles/brusselator.dir/src/writer.cpp.o: CMakeFiles/brusselator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/brusselator.dir/src/writer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/brusselator.dir/src/writer.cpp.o -MF CMakeFiles/brusselator.dir/src/writer.cpp.o.d -o CMakeFiles/brusselator.dir/src/writer.cpp.o -c /Users/hardikmadaan/Brusselator_project/Work/src/writer.cpp
-
-CMakeFiles/brusselator.dir/src/writer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/brusselator.dir/src/writer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/hardikmadaan/Brusselator_project/Work/src/writer.cpp > CMakeFiles/brusselator.dir/src/writer.cpp.i
-
-CMakeFiles/brusselator.dir/src/writer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/brusselator.dir/src/writer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/hardikmadaan/Brusselator_project/Work/src/writer.cpp -o CMakeFiles/brusselator.dir/src/writer.cpp.s
-
 # Object files for target brusselator
 brusselator_OBJECTS = \
-"CMakeFiles/brusselator.dir/src/solver.cpp.o" \
-"CMakeFiles/brusselator.dir/src/brusselator.cpp.o" \
-"CMakeFiles/brusselator.dir/src/integrator.cpp.o" \
-"CMakeFiles/brusselator.dir/src/writer.cpp.o"
+"CMakeFiles/brusselator.dir/src/solver.cpp.o"
 
 # External object files for target brusselator
 brusselator_EXTERNAL_OBJECTS =
 
 brusselator: CMakeFiles/brusselator.dir/src/solver.cpp.o
-brusselator: CMakeFiles/brusselator.dir/src/brusselator.cpp.o
-brusselator: CMakeFiles/brusselator.dir/src/integrator.cpp.o
-brusselator: CMakeFiles/brusselator.dir/src/writer.cpp.o
 brusselator: CMakeFiles/brusselator.dir/build.make
+brusselator: libbrusselator_lib.a
+brusselator: /opt/homebrew/lib/libvtkWrappingTools-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkViewsQt-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkViewsInfovis-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkPythonInterpreter-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkViewsContext2D-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkViewsCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkTestingRendering-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkTestingCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingQt-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkPythonContext2D-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingLabel-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingLOD-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingLICOpenGL2-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingImage-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingGridAxes-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingFreeTypeFontConfig-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingContextOpenGL2-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingCellGrid-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingVolumeOpenGL2-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOVeraOut-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOTecplotTable-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOSegY-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOParallelXML-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOPLY-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOOggTheora-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libtheora.dylib
+brusselator: /opt/homebrew/lib/libtheoraenc.dylib
+brusselator: /opt/homebrew/lib/libtheoradec.dylib
+brusselator: /opt/homebrew/lib/libogg.dylib
+brusselator: /opt/homebrew/lib/libvtkIONetCDF-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOMotionFX-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOParallel-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOMINC-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOLSDyna-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOLANLX3D-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOImport-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOIOSS-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkioss-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libcgns.dylib
+brusselator: /opt/homebrew/lib/libvtkIOHDF-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOFLUENTCFF-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOVideo-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOMovie-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOFDS-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOInfovis-9.6.9.6.dylib
+brusselator: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libxml2.tbd
+brusselator: /opt/homebrew/lib/libvtkIOExportPDF-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libhpdf.dylib
+brusselator: /opt/homebrew/lib/libpng.dylib
+brusselator: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libz.tbd
+brusselator: /opt/homebrew/lib/libvtkIOExportGL2PS-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingGL2PSOpenGL2-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkgl2ps-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOExodus-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkexodusII-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libnetcdf.22.dylib
+brusselator: /opt/homebrew/lib/libvtkIOEngys-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOEnSight-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOERF-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOCityGML-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libpugixml.1.16.dylib
+brusselator: /opt/homebrew/lib/libvtkIOChemistry-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOCesium3DTiles-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOCONVERGECFD-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libhdf5.320.1.1.dylib
+brusselator: /opt/homebrew/lib/libhdf5_hl.320.0.2.dylib
+brusselator: /opt/homebrew/lib/libvtkIOCGNSReader-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOAvmesh-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOAsynchronous-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOExport-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingVtkJS-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libjsoncpp.dylib
+brusselator: /opt/homebrew/lib/libvtkIOGeometry-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingSceneGraph-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOAMR-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkInteractionImage-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkInfovisLayout-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkInfovisBoostGraphAlgorithms-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libboost_serialization.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingStencil-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingStatistics-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingMorphological-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingMath-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingFourier-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkGUISupportQtSQL-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/QtSql.framework/Versions/A/QtSql
+brusselator: /opt/homebrew/lib/libvtkIOSQL-9.6.9.6.dylib
+brusselator: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libsqlite3.tbd
+brusselator: /opt/homebrew/lib/libvtkGUISupportQtQuick-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/QtQuick.framework/Versions/A/QtQuick
+brusselator: /opt/homebrew/lib/QtQml.framework/Versions/A/QtQml
+brusselator: /opt/homebrew/lib/QtNetwork.framework/Versions/A/QtNetwork
+brusselator: /opt/homebrew/lib/libvtkGUISupportQt-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/QtOpenGLWidgets.framework/Versions/A/QtOpenGLWidgets
+brusselator: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
+brusselator: /opt/homebrew/lib/QtOpenGL.framework/Versions/A/QtOpenGL
+brusselator: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
+brusselator: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
+brusselator: /opt/homebrew/lib/libvtkInteractionWidgets-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingVolume-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingAnnotation-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkInteractionStyle-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingHybrid-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingColor-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkGeovisCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libproj.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersTopology-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersTensor-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersSelection-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersSMP-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersPython-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersProgrammable-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersPoints-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersParallelImaging-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersTemporal-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersImaging-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingGeneral-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersGeometryPreview-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersGeneric-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersFlowPaths-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersAMR-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersParallel-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersTexture-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersModeling-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkDomainsChemistryOpenGL2-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingOpenGL2-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkglad-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingHyperTreeGrid-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingUI-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkx11-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersHybrid-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkDomainsChemistry-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonPython-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkWrappingPythonCore3.14-9.6.9.6.dylib
+brusselator: /opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14/lib/libpython3.14.dylib
+brusselator: /opt/homebrew/lib/libvtkChartsCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkInfovisCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersExtraction-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkParallelDIY-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOXML-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOXMLParser-9.6.9.6.dylib
+brusselator: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libexpat.tbd
+brusselator: /opt/homebrew/lib/libvtkParallelCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOLegacy-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOCellGrid-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersCellGrid-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersStatistics-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersHyperTree-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingSources-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkIOImage-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkDICOMParser-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libjpeg.dylib
+brusselator: /opt/homebrew/lib/libvtkmetaio-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libtiff.dylib
+brusselator: /opt/homebrew/lib/libvtkIOCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/liblz4.dylib
+brusselator: /opt/homebrew/lib/liblzma.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingContext2D-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingFreeType-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libfreetype.dylib
+brusselator: /opt/homebrew/lib/libvtkRenderingCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonColor-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersSources-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkImagingCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersGeneral-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersVerdict-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkverdict-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersGeometry-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonComputationalGeometry-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkFiltersReduction-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonExecutionModel-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonDataModel-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonSystem-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonMisc-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonTransforms-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonMath-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkkissfft-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkCommonCore-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtksys-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkloguru-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkfmt-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtktoken-9.6.9.6.dylib
+brusselator: /opt/homebrew/lib/libvtkscn-9.6.9.6.dylib
 brusselator: CMakeFiles/brusselator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable brusselator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable brusselator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/brusselator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

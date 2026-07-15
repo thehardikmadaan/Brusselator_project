@@ -3,8 +3,8 @@
 
 #include <string>
 
-// Structure to store all grid, physical, and solver      \\
-// parameters                                             \\
+// Structure to store all grid, physical, and solver
+// parameters
 struct GridInfo {
     int nx = 40;                 // Number of grid points in x-direction
     int ny = 40;                 // Number of grid points in y-direction

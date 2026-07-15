@@ -63,11 +63,13 @@ CMAKE_BINARY_DIR = /Users/hardikmadaan/Brusselator_project/Work/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/brusselator_lib.dir/all
 all: CMakeFiles/brusselator.dir/all
 all: CMakeFiles/test_solver.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
+codegen: CMakeFiles/brusselator_lib.dir/codegen
 codegen: CMakeFiles/brusselator.dir/codegen
 codegen: CMakeFiles/test_solver.dir/codegen
 .PHONY : codegen
@@ -77,23 +79,56 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/brusselator_lib.dir/clean
 clean: CMakeFiles/brusselator.dir/clean
 clean: CMakeFiles/test_solver.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/brusselator_lib.dir
+
+# All Build rule for target.
+CMakeFiles/brusselator_lib.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=3,4,5,6 "Built target brusselator_lib"
+.PHONY : CMakeFiles/brusselator_lib.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/brusselator_lib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/brusselator_lib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 0
+.PHONY : CMakeFiles/brusselator_lib.dir/rule
+
+# Convenience name for target.
+brusselator_lib: CMakeFiles/brusselator_lib.dir/rule
+.PHONY : brusselator_lib
+
+# codegen rule for target.
+CMakeFiles/brusselator_lib.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=3,4,5,6 "Finished codegen for target brusselator_lib"
+.PHONY : CMakeFiles/brusselator_lib.dir/codegen
+
+# clean rule for target.
+CMakeFiles/brusselator_lib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator_lib.dir/build.make CMakeFiles/brusselator_lib.dir/clean
+.PHONY : CMakeFiles/brusselator_lib.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/brusselator.dir
 
 # All Build rule for target.
-CMakeFiles/brusselator.dir/all:
+CMakeFiles/brusselator.dir/all: CMakeFiles/brusselator_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target brusselator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=1,2 "Built target brusselator"
 .PHONY : CMakeFiles/brusselator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/brusselator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/brusselator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 0
 .PHONY : CMakeFiles/brusselator.dir/rule
@@ -105,7 +140,7 @@ brusselator: CMakeFiles/brusselator.dir/rule
 # codegen rule for target.
 CMakeFiles/brusselator.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/brusselator.dir/build.make CMakeFiles/brusselator.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target brusselator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=1,2 "Finished codegen for target brusselator"
 .PHONY : CMakeFiles/brusselator.dir/codegen
 
 # clean rule for target.
@@ -117,15 +152,15 @@ CMakeFiles/brusselator.dir/clean:
 # Target rules for target CMakeFiles/test_solver.dir
 
 # All Build rule for target.
-CMakeFiles/test_solver.dir/all:
+CMakeFiles/test_solver.dir/all: CMakeFiles/brusselator_lib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target test_solver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=7,8 "Built target test_solver"
 .PHONY : CMakeFiles/test_solver.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_solver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_solver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_solver.dir/rule
@@ -137,7 +172,7 @@ test_solver: CMakeFiles/test_solver.dir/rule
 # codegen rule for target.
 CMakeFiles/test_solver.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_solver.dir/build.make CMakeFiles/test_solver.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=6,7,8,9,10 "Finished codegen for target test_solver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/hardikmadaan/Brusselator_project/Work/build/CMakeFiles --progress-num=7,8 "Finished codegen for target test_solver"
 .PHONY : CMakeFiles/test_solver.dir/codegen
 
 # clean rule for target.
