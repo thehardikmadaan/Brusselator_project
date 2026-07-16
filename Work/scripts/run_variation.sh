@@ -49,7 +49,7 @@ EOF
         rm -rf output && mkdir -p output
         
         # Run the start script
-        ./start_run.sh > "simulation.log" 2>&1
+        (time ./start_run.sh) > "simulation.log" 2>&1
         
         # Move generated files to the run directory
         mv start_run.sh "${RUN_DIR}/"
@@ -106,7 +106,7 @@ EOF
         rm -rf output && mkdir -p output
         
         # Run the start script
-        ./start_run.sh > "simulation.log" 2>&1
+        (time ./start_run.sh) > "simulation.log" 2>&1
         
         # Move generated files to the run directory
         mv start_run.sh "${RUN_DIR}/"
@@ -178,7 +178,7 @@ EOF
         echo "  Running simulation for ${PARAM} = ${val}..."
         rm -rf output && mkdir -p output
         
-        ./start_run.sh > "simulation.log" 2>&1
+        (time ./start_run.sh) > "simulation.log" 2>&1
         
         mv start_run.sh "${RUN_DIR}/"
         mv simulation.log "${RUN_DIR}/"

@@ -57,32 +57,10 @@ Time: 4.700 s | Step: 470 | Newton Iterations: 1
 Time: 4.800 s | Step: 480 | Newton Iterations: 1
 Time: 4.900 s | Step: 490 | Newton Iterations: 1
 Time: 5.000 s | Step: 500 | Newton Iterations: 1
-Time: 5.100 s | Step: 510 | Newton Iterations: 1
-Time: 5.200 s | Step: 520 | Newton Iterations: 1
-Time: 5.300 s | Step: 530 | Newton Iterations: 1
-Time: 5.400 s | Step: 540 | Newton Iterations: 1
-Time: 5.500 s | Step: 550 | Newton Iterations: 1
-Time: 5.600 s | Step: 560 | Newton Iterations: 1
-Time: 5.700 s | Step: 570 | Newton Iterations: 1
-Time: 5.800 s | Step: 580 | Newton Iterations: 1
-Time: 5.900 s | Step: 590 | Newton Iterations: 1
-Time: 6.000 s | Step: 600 | Newton Iterations: 1
-Time: 6.100 s | Step: 610 | Newton Iterations: 1
-Time: 6.200 s | Step: 620 | Newton Iterations: 1
-Time: 6.300 s | Step: 630 | Newton Iterations: 1
-Time: 6.400 s | Step: 640 | Newton Iterations: 1
-Time: 6.500 s | Step: 650 | Newton Iterations: 1
-Time: 6.600 s | Step: 660 | Newton Iterations: 1
-Time: 6.700 s | Step: 670 | Newton Iterations: 2
-Time: 6.800 s | Step: 680 | Newton Iterations: 2
-Time: 6.900 s | Step: 690 | Newton Iterations: 2
-Time: 7.000 s | Step: 700 | Newton Iterations: 2
-Time: 7.100 s | Step: 710 | Newton Iterations: 2
-Time: 7.200 s | Step: 720 | Newton Iterations: 2
-Time: 7.300 s | Step: 730 | Newton Iterations: 2
-Time: 7.400 s | Step: 740 | Newton Iterations: 2
-Time: 7.500 s | Step: 750 | Newton Iterations: 2
-Time: 7.600 s | Step: 760 | Newton Iterations: 2
-Time: 7.700 s | Step: 770 | Newton Iterations: 2
-Time: 7.800 s | Step: 780 | Newton Iterations: 2
-Time: 7.900 s | Step: 790 | Newton Iterations
+Time: 5.000 s | Step: 501 | Newton Iterations: 0
+Simulation completed successfully.
+Total Newton Iterations: 592
+
+real	2m30.280s
+user	2m28.704s
+sys	0m0.698s
