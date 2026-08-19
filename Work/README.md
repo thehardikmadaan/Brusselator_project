@@ -83,3 +83,26 @@ results/
         ├── output_0002.vtk
         └── simulation.log
 ```
+
+## How to use and run Docker
+
+### 1. Build the Docker image
+Whenever you change your C++ code, you need to rebuild the container image. Run the following command in the `Work` directory:
+```bash
+docker build -t brusselator .
+```
+
+### 2. Run a simulation
+Once built, you run the `brusselator` executable and pass in the necessary simulation arguments (like grid size, time, and method). To ensure that the output files generated inside the container are saved to your local machine, map a volume using the `-v` flag:
+
+```bash
+docker run --rm -v $(pwd)/output:/app/output brusselator brusselator 40 40 30.0 0.01 1.0 1.0 3.0 rk4 on
+```
+
+If you want to run the test suite instead:
+```bash
+docker run --rm brusselator test_solver
+```
+
+## Authors
+- Hardik Madaan
